@@ -1,0 +1,19 @@
+{
+  "promocion": [
+    {
+      "imagen": "promo01.jpg",
+      "titulo": "2x1 en cines",
+      "descripcion": "Utilizando tu tarjeta de Credito BDC"
+    },
+    {
+      "imagen": "promo02.jpg",
+      "titulo": "50% dcto Pepe Pizza",
+      "descripcion": "50% de descuento en todos los locales de Pepe Pizza con tus tarjetas BDC"
+    },
+    {
+      "imagen": "promo03.jpg",
+      "titulo": "Delivery Gratis",
+      "descripcion": "Al comprar en Sushi-Sensei de lunes a jueves"
+    }
+  ]
+}

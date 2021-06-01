@@ -1,0 +1,19 @@
+{
+  "cupos": [
+    {
+      "nombre": "Linea de Credito",
+      "utilizado": 1450,
+      "disponible": 1500
+    },
+    {
+      "nombre": "Tarjeta de Credito",
+      "utilizado": 1550,
+      "disponible": 3000
+    }
+  ],
+  "usuario": {
+    "nombre": "Luis",
+    "apellido": "Cifuentes",
+    "mensaje": "Tenemos un monto de 1.000.000 preaprobado. Solicitalo ya!"
+  }
+}

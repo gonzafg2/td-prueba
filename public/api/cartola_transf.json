@@ -1,0 +1,37 @@
+{
+  "transferencias": [
+    {
+      "num_trx": "2334",
+      "fecha": "2020-07-10T00:00:00.000Z",
+      "destinatario": "Comunidad Edificio Don Lalo",
+      "monto": "50000",
+      "estado": "Realizado"
+    },
+    {
+      "num_trx": "2243",
+      "fecha": "2020-07-08T00:00:00.000Z",
+      "destinatario": "Rosita Rosas",
+      "monto": "25000",
+      "estado": "Realizado"
+    },
+    {
+      "num_trx": "2353",
+      "fecha": "2020-07-06T00:00:00.000Z",
+      "destinatario": "Daniel Davila",
+      "monto": "15000",
+      "estado": "Realizado"
+    },
+    {
+      "num_trx": "2337",
+      "fecha": "2020-07-02T00:00:00.000Z",
+      "destinatario": "Matias Matamala",
+      "monto": "7500",
+      "estado": "Rechazado"
+    }
+  ],
+  "pagedResult": {
+    "page": 1,
+    "size": 10,
+    "total": 4
+  }
+}

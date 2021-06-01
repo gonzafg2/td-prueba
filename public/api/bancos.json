@@ -1,0 +1,36 @@
+{
+  "bancos": [
+    {
+      "id": 100,
+      "nombre": "Banco Chile"
+    },
+    {
+      "id": 101,
+      "nombre": "Banco Bice"
+    },
+    {
+      "id": 102,
+      "nombre": "Banco BCI"
+    },
+    {
+      "id": 103,
+      "nombre": "Banco Consorcio"
+    },
+    {
+      "id": 104,
+      "nombre": "Banco Estado"
+    },
+    {
+      "id": 105,
+      "nombre": "Banco Falabella"
+    },
+    {
+      "id": 106,
+      "nombre": "Banco Santander"
+    },
+    {
+      "id": 107,
+      "nombre": "Banco Scotiabank"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "cuenta_origen": 1,
+  "banco": "Banco Estado",
+  "num_cuenta": "OK",
+  "rut":"10987654-3",
+  "nombre":"Daniel Diaz",
+  "monto": 25000,
+  "email": "ddiaz@gmail.com",
+  "mensaje": "Lo adeudado, saludos"
+}

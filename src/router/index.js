@@ -7,20 +7,15 @@ const routes = [
   {
     path: "/",
     name: "LayoutPub",
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/Home.vue"),
+    component: () => import(/* webpackChunkName: "home" */ "../views/Home.vue"),
     children: [
-      {
-        path: "/login",
-        name: "Login",
-        component: () =>
-          import(/* webpackChunkName: "about" */ "../views/Login.vue"),
-      },
       {
         path: "/publico",
         name: "DashboardPub",
         component: () =>
-          import(/* webpackChunkName: "about" */ "../views/DashboardPub.vue"),
+          import(
+            /* webpackChunkName: "DashboardPub" */ "../views/DashboardPub.vue"
+          ),
       },
     ],
   },
@@ -49,6 +44,12 @@ const routes = [
           import(/* webpackChunkName: "about" */ "../views/Transferencias.vue"),
       },
     ],
+  },
+  {
+    path: "/login",
+    name: "Login",
+    component: () =>
+      import(/* webpackChunkName: "login" */ "../views/Login.vue"),
   },
 ];
 
