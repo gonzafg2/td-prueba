@@ -6,18 +6,8 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: "/",
-    name: "LayoutPub",
+    name: "Home",
     component: () => import(/* webpackChunkName: "home" */ "../views/Home.vue"),
-    children: [
-      {
-        path: "/publico",
-        name: "DashboardPub",
-        component: () =>
-          import(
-            /* webpackChunkName: "DashboardPub" */ "../views/DashboardPub.vue"
-          ),
-      },
-    ],
   },
   {
     path: "/privado",
@@ -44,12 +34,6 @@ const routes = [
           import(/* webpackChunkName: "about" */ "../views/Transferencias.vue"),
       },
     ],
-  },
-  {
-    path: "/login",
-    name: "Login",
-    component: () =>
-      import(/* webpackChunkName: "login" */ "../views/Login.vue"),
   },
 ];
 

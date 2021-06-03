@@ -57,8 +57,11 @@ export default {
       const datos = this.form;
       if (!datos.email || !datos.password) return;
       const res = await this.Login(datos);
-      if (res === "No, todo mal") alert("Login erróneo!");
-      console.log(res);
+      if (res === "No, todo mal") {
+        alert("Login erróneo!");
+        return;
+      }
+      this.$router.push("/privado/dashboard");
     },
   },
 };

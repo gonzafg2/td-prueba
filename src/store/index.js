@@ -40,7 +40,7 @@ export default new Vuex.Store({
       // }
 
       try {
-        const URL = "/api/logina.json";
+        const URL = "/api/login.json";
 
         const req = await axios(URL);
         const data = req.data;
