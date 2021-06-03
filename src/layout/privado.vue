@@ -9,7 +9,9 @@
           <Breadcrumb class="my-4" />
         </b-col>
         <!-- Sidebar -->
-        <b-col cols="2"></b-col>
+        <b-col cols="2">
+          <Sidebar />
+        </b-col>
         <!-- RouterView Vista cambiantes de Privado -->
         <b-col cols="10">
           <router-view />
@@ -22,12 +24,14 @@
 <script>
 import NavPrivado from "@/components/privado/NavPrivado.vue";
 import Breadcrumb from "@/components/privado/Breadcrumb.vue";
+import Sidebar from "@/components/privado/Sidebar.vue";
 
 export default {
   name: "LayoutPrivado",
   components: {
     NavPrivado,
     Breadcrumb,
+    Sidebar,
   },
 };
 </script>

@@ -11,12 +11,16 @@ export default new Vuex.Store({
       id: "",
       token: "",
     },
+    dashboardPrivado: {},
   },
   getters: {},
   mutations: {
     GuardarDataLogin(state, payload) {
       state.loginAPI = payload;
       console.log(state.loginAPI);
+    },
+    GuardarDashboardPrivado(state, payload) {
+      state.dashboardPrivado = payload;
     },
   },
   actions: {
@@ -51,6 +55,17 @@ export default new Vuex.Store({
       } catch (error) {
         console.log();
         return "No, todo mal";
+      }
+    },
+    async DashboardPrivado({ commit }) {
+      try {
+        const URL = "/api/dashboard.json";
+
+        const req = await axios(URL);
+        console.log(req.data);
+        commit("GuardarDashboardPrivado", req.data);
+      } catch (error) {
+        console.log(error);
       }
     },
   },

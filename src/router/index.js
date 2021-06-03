@@ -17,21 +17,23 @@ const routes = [
     children: [
       {
         path: "dashboard",
-        name: "DashboardPri",
+        name: "DashboardPrivado",
         component: () =>
-          import(/* webpackChunkName: "about" */ "../views/DashboardPri.vue"),
+          import(
+            /* webpackChunkName: "about" */ "../views/privado/DashboardPrivado.vue"
+          ),
       },
       {
         path: "/privado/transferir",
         name: "CrearTransf",
         component: () =>
-          import(/* webpackChunkName: "about" */ "../views/Transferir.vue"),
+          import(/* webpackChunkName: "about" */ "../views/privado/Transferir.vue"),
       },
       {
         path: "/privado/transferencias",
         name: "CartolaTransf",
         component: () =>
-          import(/* webpackChunkName: "about" */ "../views/Transferencias.vue"),
+          import(/* webpackChunkName: "about" */ "../views/privado/Transferencias.vue"),
       },
     ],
   },
