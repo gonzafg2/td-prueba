@@ -11,45 +11,49 @@
               class="w-100"
             />
           </div>
-          <h1 class="hero-section__titulo">Bienvenido Juan!</h1>
-          <h2 class="hero-section__subtitulo">Tienes un monto de 1.000.000</h2>
+          <h1 v-if="dashboardPrivado && dashboardPrivado.usuario" class="hero-section__titulo">Bienvenido {{ dashboardPrivado.usuario.nombre }}!</h1>
+          <h1 v-else class="hero-section__titulo">Bienvenido Usuario!</h1>
+          <h2 v-if="dashboardPrivado && dashboardPrivado.usuario" class="hero-section__subtitulo">{{ dashboardPrivado.usuario.mensaje }}</h2>
+          <h2 v-else>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex, eaque! Voluptatem minima nisi amet blanditiis alias repudiandae esse ratione assumenda illum, culpa quam maiores, commodi nulla nemo eum consequuntur ipsa.</h2>
         </div>
       </b-col>
       <!-- Indicador 1 -->
-      <b-col cols="6" v-for="(cupo, i) in dashboardPrivado.cupos" :key="i">
-        <div class="indicador indicador--1">
-          <b-card no-body class="overflow-hidden" style="max-width: 540px">
-            <b-row no-gutters>
-              <b-col md="6">
-                <apexchart
-                  type="radialBar"
-                  height="150"
-                  :options="options"
-                  :series="series"
-                ></apexchart>
-              </b-col>
-              <b-col md="6">
-                <b-card-body class="indicador__titulo" :title="cupo.nombre">
-                  <b-card-text>
-                    <b-row>
-                      <b-col cols="6">
-                        <p class="indicador__numero">{{ cupo.utilizado }}</p>
-                        <p class="indicador__texto">Utilizado</p>
-                      </b-col>
-                      <b-col cols="6">
-                        <p class="indicador__numero">{{ cupo.disponible }}</p>
-                        <p class="indicador__texto indicador__texto--verde">
-                          Total
-                        </p>
-                      </b-col>
-                    </b-row>
-                  </b-card-text>
-                </b-card-body>
-              </b-col>
-            </b-row>
-          </b-card>
-        </div>
-      </b-col>
+      <template v-if="dashboardPrivado">
+        <b-col class="my-5" cols="6" v-for="(cupo, i) in dashboardPrivado.cupos" :key="i">
+          <div class="indicador indicador--1">
+            <b-card no-body class="overflow-hidden" style="max-width: 540px">
+              <b-row no-gutters>
+                <b-col md="6">
+                  <apexchart
+                    type="radialBar"
+                    height="150"
+                    :options="options"
+                    :series="calculo(cupo.utilizado, cupo.disponible)"
+                  ></apexchart>
+                </b-col>
+                <b-col md="6">
+                  <b-card-body class="indicador__titulo" :title="cupo.nombre">
+                    <b-card-text>
+                      <b-row>
+                        <b-col cols="6">
+                          <p class="indicador__numero">{{ cupo.utilizado }}</p>
+                          <p class="indicador__texto">Utilizado</p>
+                        </b-col>
+                        <b-col cols="6">                                                                                                                                                                                                                                                  
+                          <p class="indicador__numero">{{ cupo.disponible }}</p>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+                          <p class="indicador__texto indicador__texto--verde">
+                            Total
+                          </p>
+                        </b-col>
+                      </b-row>
+                    </b-card-text>
+                  </b-card-body>
+                </b-col>
+              </b-row>
+            </b-card>
+          </div>
+        </b-col>
+      </template>
     </b-row>
   </div>
 </template>
@@ -73,9 +77,8 @@ export default {
             },
           },
         },
-        labels: ["70%"],
+        labels: [""],
       },
-      series: [70],
     };
   },
   components: {
@@ -89,6 +92,9 @@ export default {
   },
   methods: {
     ...mapActions(["DashboardPrivado"]),
+    calculo(uno, dos) {
+      return [Math.round(uno / dos * 100)];
+    }
   },
 };
 </script>

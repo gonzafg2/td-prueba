@@ -21,6 +21,8 @@ Vue.use(VueApexCharts);
 
 Vue.component("apexchart", VueApexCharts);
 
+import "./assets/scss/style.scss";
+
 new Vue({
   router,
   store,
