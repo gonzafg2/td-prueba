@@ -7,14 +7,14 @@
         </b-col>
         <b-col cols="12" md="4" class="border p-5 text-center">
           <b-form-group
-            label="Correo Electrónico:"
-            description="Ingresa tu correo."
+            label="RUT:"
+            description="Ingresa tu RUT."
             class="mb-4 text-start"
           >
             <b-form-input
-              v-model="form.email"
-              type="email"
-              placeholder="Correo Electrónico"
+              v-model="form.rut"
+              type="text"
+              placeholder="RUT"
             ></b-form-input>
           </b-form-group>
 
@@ -46,7 +46,7 @@ export default {
   data() {
     return {
       form: {
-        email: "",
+        rut: "",
         password: "",
       },
     };
@@ -55,8 +55,10 @@ export default {
     ...mapActions(["Login"]),
     async logueo() {
       const datos = this.form;
-      if (!datos.email || !datos.password) return;
+      if (!datos.rut || !datos.password) return;
+      
       const res = await this.Login(datos);
+
       if (res === "No, todo mal") {
         alert("Login erróneo!");
         return;

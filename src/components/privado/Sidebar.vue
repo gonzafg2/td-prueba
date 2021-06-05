@@ -36,15 +36,15 @@
 
 <script>
 export default {
-  name: "Sidebar"
-}
+  name: "Sidebar",
+};
 </script>
 
 <style lang="scss" scoped>
-ul { 
+ul {
   list-style: none;
 }
-button { 
+button {
   border-bottom: 1px solid #dee2e6;
 }
 </style>

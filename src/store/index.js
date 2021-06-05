@@ -28,6 +28,8 @@ export default new Vuex.Store({
       const datosLogin = payload;
       if (!datosLogin) return;
 
+      const rut = datosLogin.rut;
+
       // try {
       //   const URL = "https://prueba-vuex.herokuapp.com/api/v1/bdc/users/login";
       //   const config = {
@@ -42,16 +44,20 @@ export default new Vuex.Store({
       // } catch (error) {
       //   console.log(error);
       // }
-
+      
       try {
         const URL = "/api/login.json";
 
         const req = await axios(URL);
         const data = req.data;
 
-        commit("GuardarDataLogin", data);
-        if (!data) return "No, todo mal";
-        return "Si, todo ok!";
+        const rutAPI = data.username;
+
+        if (rutAPI === rut) {
+          commit("GuardarDataLogin", data);
+          return "Si, todo ok!";
+        }
+        return "No, todo mal";
       } catch (error) {
         console.log();
         return "No, todo mal";

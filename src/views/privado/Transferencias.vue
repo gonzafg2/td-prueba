@@ -4,9 +4,8 @@
   </div>
 </template>
 
-
 <script>
 export default {
-  name: "Transferencias"
-}
+  name: "Transferencias",
+};
 </script>

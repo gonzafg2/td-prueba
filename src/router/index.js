@@ -27,13 +27,17 @@ const routes = [
         path: "/privado/transferir",
         name: "CrearTransf",
         component: () =>
-          import(/* webpackChunkName: "about" */ "../views/privado/Transferir.vue"),
+          import(
+            /* webpackChunkName: "about" */ "../views/privado/Transferir.vue"
+          ),
       },
       {
         path: "/privado/transferencias",
         name: "CartolaTransf",
         component: () =>
-          import(/* webpackChunkName: "about" */ "../views/privado/Transferencias.vue"),
+          import(
+            /* webpackChunkName: "about" */ "../views/privado/Transferencias.vue"
+          ),
       },
     ],
   },

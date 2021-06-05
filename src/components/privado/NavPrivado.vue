@@ -1,6 +1,8 @@
 <template>
   <b-navbar toggleable="md" type="dark" variant="dark">
-    <b-navbar-brand href="#" class="ps-2">Banco Digital de Chile</b-navbar-brand>
+    <b-navbar-brand href="#" class="ps-2"
+      >Banco Digital de Chile</b-navbar-brand
+    >
 
     <b-navbar-toggle target="navbar-toggle-collapse">
       <template #default="{ expanded }">
